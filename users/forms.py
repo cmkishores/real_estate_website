@@ -1,4 +1,4 @@
-from .models import CustomUser
+from .models import CustomUser #imports the custom user created in users.models
 from django import forms
 from django.contrib.auth.forms import UserCreationForm,UserChangeForm
 
