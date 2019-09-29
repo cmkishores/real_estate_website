@@ -42,6 +42,7 @@ INSTALLED_APPS = [
 
     #user-created apps
     'users.apps.UsersConfig',
+    'articles.apps.ArticlesConfig',
 ]
 
 MIDDLEWARE = [
