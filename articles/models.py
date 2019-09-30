@@ -11,7 +11,7 @@ class Article(models.Model):
 			('CX','Shopping Complex'),
 
 			]
-
+	# Choice fields for the property condition
 	CONDITION = [
 			('NW','NEW'),
 			('UD','Used'),
@@ -25,6 +25,7 @@ class Article(models.Model):
 	type = models.CharField(max_length=30,choices=TYPE)
 	condition = models.CharField(max_length=30,choices=CONDITION)
 	owner_name = models.CharField(max_length=40)
+	
 
 
 # Create your models here.
