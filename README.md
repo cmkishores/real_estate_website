@@ -10,3 +10,4 @@ A django-HTML-CSS webpage built to mimic a Real Estate e-Commerce website with s
 ### Things learnt
 
 * Setting up the allauth user authentication module for django
+* How to implement a comment system to the posts so that the comment only shows up in the respective post
