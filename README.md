@@ -8,4 +8,5 @@ A django-HTML-CSS webpage built to mimic a Real Estate e-Commerce website with s
 * [Django-AllAuth](https://django-allauth.readthedocs.io/en/latest/overview.html) *for social authentication *
 
 ### Things learnt
-*Setting up the allauth user authentication module for django
+
+* Setting up the allauth user authentication module for django
