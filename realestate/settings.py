@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
 
     #3rd party apps
 
@@ -47,8 +48,8 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     #providers list
-    'allauth.socialaccount.providers.facebook',
-    'allauth.socialaccount.providers.google',
+   # 'allauth.socialaccount.providers.facebook',
+   # 'allauth.socialaccount.providers.google',
 
     #user-created apps
     'users.apps.UsersConfig',

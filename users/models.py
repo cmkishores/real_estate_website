@@ -12,4 +12,5 @@ class CustomUser(AbstractUser):
 		]
 
 	# CharField takes a maximum length of 50 characters and is limited to choices defined in the above dictionary
-	user_type = models.CharField(max_length=50,choices=TYPE)
+	category = models.CharField(max_length=50,choices=TYPE)
+	mob_num = models.CharField(max_length=10)

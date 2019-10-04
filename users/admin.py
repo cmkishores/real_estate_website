@@ -9,10 +9,10 @@ class CustomUserAdmin(UserAdmin) # Inherited from UserAdmin to customize the def
 	model = CustomUser
 	add_form = CustomUserCreationForm
 	form = CustomUserChangeForm
-	list_display = ['email','username','user_type',]
+	list_display = ['email','username','category',]
 	fieldsets = UserAdmin.fieldsets + (
 										 (None,
-										 {'fields':('user_type',)}
+										 {'fields':('category','mob_num',)}
 										 ),
 									   )
 	add_fieldsets = (
