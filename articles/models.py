@@ -25,6 +25,11 @@ class Article(models.Model):
 	type = models.CharField(max_length=30,choices=TYPE)
 	condition = models.CharField(max_length=30,choices=CONDITION)
 	owner_name = models.CharField(max_length=40)
+	owner_address = models.TextField()
+	description = models.TextField()
+	location = models.TextField()
+	
+
 	
 
 
