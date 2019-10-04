@@ -6,6 +6,7 @@ A django-HTML-CSS webpage built to mimic a Real Estate e-Commerce website with s
 * [Django](https://www.djangoproject.com/)
 * [Django-Crispy-Forms](https://django-crispy-forms.readthedocs.io/en/latest/#) *for Form rendering*
 * [Django-AllAuth](https://django-allauth.readthedocs.io/en/latest/overview.html) *for social authentication*
+* [Pillow](https://pillow.readthedocs.io/en/stable/) *for handling media in django*
 
 ### Things learnt
 
