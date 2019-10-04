@@ -39,9 +39,9 @@ class EditArticle(UpdateView):
 	template_name = 'editarticle.html'
 	fields = ['category','condition','owner_name','owner_address','description','location','photo']
 
-class DeleteArticleView(DeleteView):
+class DeleteArticle(DeleteView):
 	model = Article
 	template_name = 'deletearticle.html'
 	success_url = reverse_lazy('home')
-	
+
 
