@@ -15,8 +15,8 @@
 		{% block title %} 
 		{% endblock title %} 
 	</title>
-		}
-}
+		
+
 </head>
 <body>
 
@@ -24,7 +24,7 @@
 <nav class="navbar navbar-dark red lighten-1 mb-4">
 
   <!-- Navbar brand -->
-  <a class="navbar-brand" href="{% url '' %}">realEst</a>
+  <a class="navbar-brand" href="{% url 'home' %}">realEst</a>
 
   <!-- Collapse button -->
   <button class="navbar-toggler second-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent23"
@@ -50,9 +50,9 @@
   <!-- Collapsible content -->
 
 </nav>
-
+<div class="container">
 	{% block body %}  {% endblock body %}
-
+</div>
 
 
 

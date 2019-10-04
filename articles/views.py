@@ -2,9 +2,9 @@ from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin, PermissionRequiredMixin
-from django.db.models.query_utils import query_utils
+from django.db.models.query_utils import Q
 
-from django.contrib.auth models import Permission
+from django.contrib.auth.models import Permission
 from django.urls import reverse_lazy
 
 from .models import Article
@@ -22,7 +22,7 @@ class ArticlesListView(ListView):
 class ArticleDetailView(DetailView):
 
 	model = Article
-	template_name = 'article.html'
+	template_name = 'articles.html'
 
 class AddArticle(CreateView):
 	model = Article

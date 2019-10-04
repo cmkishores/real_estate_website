@@ -1,14 +1,16 @@
 from django.db import models
+from django.urls import reverse
+from django.contrib.auth import get_user_model
 
 class Article(models.Model):
 
 	# Choice fields for adverticement property type
 
 	TYPE = [
-			('FT','Flats'),
-			('VL','Villas'),
-			('LD','Land'),
-			('CX','Shopping Complex'),
+			('Flats','FT'),
+			('Villas','VL'),
+			('Land','LD'),
+			('Shopping Complex','CX'),
 
 			]
 	# Choice fields for the property condition
@@ -40,5 +42,9 @@ class Article(models.Model):
 
 	
 
-
-# Create your models here.
+#Comment model for posts 
+class Comment(models.Model):
+    post = models.ForeignKey('articles.Article', on_delete=models.CASCADE, related_name='comments')
+    author = models.CharField(max_length=200)
+    text = models.TextField()
+    created_date = models.DateTimeField(auto_now_add=True, editable=False, null=False, blank=False)

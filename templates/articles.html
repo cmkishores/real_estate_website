@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+
+
+
+{% block body %}
+
+<h1> {{ article.type }} </h1>
+
+<h2>{{ article.owner_name }}</h2>
+
+<p2> {{ article.description }} </p2>
+
+
+<img  src="{{ article.photo.url }}" alt="{{ article.type }}">
+
+<div class="mt-5">
+	<h2>
+	Comments </h2>
+{% for comment in article.comments.all %}
+    <div class="comment">
+        <div class="date">{{ comment.created_date }}</div>
+        <strong>{{ comment.author }}</strong>
+        <p>{{ comment.text|linebreaks }}</p>
+    </div>
+</div>
+
+{% endfor %}
+
+{% endblock body %}

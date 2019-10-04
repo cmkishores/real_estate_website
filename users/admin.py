@@ -5,7 +5,8 @@ from .forms import CustomUserCreationForm, CustomUserChangeForm # Imports the tw
 from django.contrib.auth.admin import UserAdmin
 
 
-class CustomUserAdmin(UserAdmin) # Inherited from UserAdmin to customize the default admin panel display
+class CustomUserAdmin(UserAdmin):
+# Inherited from UserAdmin to customize the default admin panel display
 	model = CustomUser
 	add_form = CustomUserCreationForm
 	form = CustomUserChangeForm
@@ -22,4 +23,5 @@ class CustomUserAdmin(UserAdmin) # Inherited from UserAdmin to customize the def
 			'fields':('email','username','password1','password2','is_staff','is_active')
 			}),
 					)
-	admin.site.register(CustomUser, CustomUserAdmin)
+
+admin.site.register(CustomUser, CustomUserAdmin)

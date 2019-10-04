@@ -6,8 +6,8 @@ class CustomUser(AbstractUser):
 
 	# Two types of users sign up.  According to type, posting and other privilages are granted.
 	TYPE = [
-			('seller'),
-			('buyer'),
+			('s','seller'),
+			('b','buyer'),
 
 		]
 

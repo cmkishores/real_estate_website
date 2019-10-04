@@ -10,4 +10,19 @@
 <p class="text-muted" > We do not own any responsibility over the advertisements posted over thi platform. All the communication carried over here shall be on the sole responsibility of the end user </p>
 
 
+<ul class="list-inline" > 
+	      {% for element in articlelist reversed %}
+            <a class = "card-link text-danger text-danger " href="{% url 'article' element.id %}">
+               
+                <div >
+                  <li class="list-inline-item"> 
+                    <h4 >  {{ element.category }} ( {{ element.location }} ) </h4>
+                    <h6 class="text-muted" > Added {{ element.created_at|timesince }} Ago</h6>
+                    
+                  </li>
+                </div>
+                          </a>
+  
+            {% endfor %}
+  	</ul>
 {% endblock body %}
