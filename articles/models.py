@@ -22,13 +22,21 @@ class Article(models.Model):
 		verbose_name = 'Article'
 
 
-	type = models.CharField(max_length=30,choices=TYPE)
+	category = models.CharField(max_length=30,choices=TYPE)
 	condition = models.CharField(max_length=30,choices=CONDITION)
 	owner_name = models.CharField(max_length=40)
 	owner_address = models.TextField()
 	description = models.TextField()
 	location = models.TextField()
-	
+	photo = models.ImageField(upload_to='images/',blank=True)
+	owner = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
+
+	def __str__(self):
+		return self.owner_name
+
+
+	def get_absolute_url(self):
+		return reverse('article',args=[str(self.id)])
 
 	
 
