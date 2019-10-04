@@ -40,10 +40,23 @@ INSTALLED_APPS = [
 
     #3rd party apps
 
+
+    
+    #all-auth apps
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    #providers list
+    'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.google',
+
     #user-created apps
     'users.apps.UsersConfig',
     'articles.apps.ArticlesConfig',
 ]
+
+#for allauth
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
