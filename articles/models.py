@@ -7,17 +7,17 @@ class Article(models.Model):
 	# Choice fields for adverticement property type
 
 	TYPE = [
-			('Flats','FT'),
-			('Villas','VL'),
-			('Land','LD'),
-			('Shopping Complex','CX'),
+			('Flats','Flats'),
+			('Villas','Villas'),
+			('Land','Land'),
+			('Shopping Complex','Shopping Complexes'),
 
 			]
 	# Choice fields for the property condition
 	CONDITION = [
-			('NW','NEW'),
-			('UD','Used'),
-			('UC','Upcoming Project'),
+			('New','NEW'),
+			('Used','Used'),
+			('Upcoming project','Upcoming Project'),
 
 		]
 	class Meta:
