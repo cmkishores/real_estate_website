@@ -21,34 +21,22 @@
 <body>
 
 <!--Navbar-->
-<nav class="navbar navbar-dark red lighten-1 mb-4">
+<nav class="navbar navbar-dark purple lighten-1 mb-4">
 
   <!-- Navbar brand -->
   <a class="navbar-brand" href="{% url 'home' %}">realEst</a>
 
-  <!-- Collapse button -->
-  <button class="navbar-toggler second-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent23"
-    aria-controls="navbarSupportedContent23" aria-expanded="false" aria-label="Toggle navigation">
-    <div class="animated-icon2"><span></span><span></span><span></span><span></span></div>
-  </button>
+  {% if not request.user.is_authenticated %}
+  <a class="navbar-link btn white text-dark" href="{% url 'login'%}">LogIn</a>
+  
+  <a class="navbar-link btn blue" href="{% url 'signup' %}">SignUp!</a>
 
-  <!-- Collapsible content -->
-  <div class="collapse navbar-collapse" id="navbarSupportedContent23">
+  {% else %}
+  <a class="navbar-link btn-outline-danger" href="{% url 'logout' %}"></a>
 
-    <!-- Links -->
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="#">Features</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Pricing</a>
-      </li>
-    </ul>
-    <!-- Links -->
+  {% endif %}
 
-  </div>
-  <!-- Collapsible content -->
-
+  
 </nav>
 <div class="container">
 	{% block body %}  {% endblock body %}
