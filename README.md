@@ -1,4 +1,4 @@
-# real_estate_website
+# Real Estate website
 A django-HTML-CSS webpage built to mimic a Real Estate e-Commerce website with social auth for login and comment system for users who visit
 
 ## Built with
