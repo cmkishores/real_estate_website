@@ -9,9 +9,7 @@
 
 <p class="text-muted" > We do not own any responsibility over the advertisements posted over thi platform. All the communication carried over here shall be on the sole responsibility of the end user </p>
 {% if request.user.is_authenticated %}
-<ul type="none">
-	<li> <a class = "btn button blue text-dark text-danger " href="{% url 'addarticle'  %}"> Add Article </a></li>
-</ul>
+
 
 {% endif %}
 <ul class="list-inline" > 

@@ -21,18 +21,18 @@
 <body>
 
 <!--Navbar-->
-<nav class="navbar navbar-dark purple lighten-1 mb-4">
+<nav class="navbar navbar-dark yellow darken-4 mb-4">
 
   <!-- Navbar brand -->
-  <a class="navbar-brand" href="{% url 'home' %}">realEst</a>
+  <a class="navbar-brand " href="{% url 'home' %}">realEst</a>
 
   {% if not request.user.is_authenticated %}
-  <a class="navbar-link btn white text-dark" href="{% url 'login'%}">LogIn</a>
+  <a class="navbar-link btn orange lighten-2 text-dark" href="{% url 'login'%}">LogIn</a>
   
-  <a class="navbar-link btn blue" href="{% url 'signup' %}">SignUp!</a>
+  <a class="navbar-link btn yellow darken-2" href="{% url 'signup' %}">SignUp!</a>
 
   {% else %}
-  <a class="navbar-link btn-outline-danger" href="{% url 'logout' %}"></a>
+  <a class="navbar-link btn white" href="{% url 'logout' %}"> Logout</a>
 
   {% endif %}
 

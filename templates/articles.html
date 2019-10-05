@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load static %}
 
 
 
@@ -9,11 +9,21 @@
 
 <h2>{{ article.owner_name }}</h2>
 
-<p2> {{ article.description }} </p2>
+
+<p> {{ article.description }} </p>
 
 
+{% if request.user.category == 'Seller' %}
 
-<a class = "card-link text-dark text-danger " href="{% url 'editarticle'  article.id %}">Edit Article </a>
+<ul type="none">
+	<li> <a class = "btn button blue text-dark" href="{% url 'addarticle'  %}"> Add Article </a></li>
+</ul>
+{% endif %}
+
+ <img src="{{ Article.photo.url }}" alt="{{ article.type }}">
+
+<p><a class = "card-link btn text-dark text-danger " href="{% url 'editarticle'  article.id %}">Edit Article </a></p>
+
 <div class="mt-5">
 	<h2>
 	Comments </h2>
