@@ -16,8 +16,10 @@
 
 
   <img src="{{ article.photo.url }}" alt="{{ article.type }}">
+{% if request.user.is_authenticated %}
 
 <p><a class = "card-link btn text-dark text-danger " href="{% url 'editarticle'  article.id %}">Edit Article </a></p>
+{% endif %}
 
 <div class="mt-5">
 	<h2>
@@ -32,4 +34,9 @@
 
 {% endfor %}
 
+{% if request.user.is_authenticated %}
+
+<h5 class="card m-5"> Contact seller :- {{ article.owner }} </a>
+
+{% endif %}
 {% endblock body %}

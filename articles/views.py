@@ -24,7 +24,7 @@ class ArticleDetailView(DetailView):
 	model = Article
 	template_name = 'articles.html'
 
-class AddArticle(CreateView):
+class AddArticle(LoginRequiredMixin, CreateView):
 	model = Article
 	template_name = 'addarticle.html'
 	fields = ['category','condition','owner_name','owner_address','description','location','photo']
@@ -33,15 +33,25 @@ class AddArticle(CreateView):
 		form.instance.owner = self.request.user
 		return super().form_valid(form)
 
-class EditArticle(UpdateView):
+class EditArticle(LoginRequiredMixin,UserPassesTestMixin, UpdateView):
 
 	model = Article
 	template_name = 'editarticle.html'
 	fields = ['category','condition','owner_name','owner_address','description','location','photo']
 
-class DeleteArticle(DeleteView):
+	def test_func(self):
+		obj = self.get_object()
+		return obj.owner == self.request.user
+	
+
+class DeleteArticle(LoginRequiredMixin,UserPassesTestMixin, DeleteView):
 	model = Article
 	template_name = 'deletearticle.html'
 	success_url = reverse_lazy('home')
+
+	def test_func(self):
+		obj = self.get_object()
+		return obj.owner == self.request.user
+	
 
 
