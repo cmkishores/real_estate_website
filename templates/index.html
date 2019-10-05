@@ -10,18 +10,24 @@
 <p class="text-muted" > We do not own any responsibility over the advertisements posted over thi platform. All the communication carried over here shall be on the sole responsibility of the end user </p>
 
 <ul class="list-inline" > 
+
 	      {% for element in articlelist reversed %}
+            <div class="card md-2 mt-2">
+            	<div clas="card-body">
             <a class = "card-link text-danger text-danger " href="{% url 'article' element.id %}">
                
-                <div >
+                <div class="container m-3">
                   <li class="list-inline-item"> 
-                    <h4 >  {{ element.category }} ( {{ element.location }} ) </h4>
+                    <h4 > Type of property: {{ element.category }} ( {{ element.location }} ) </h4>
+                    <p><img class="card-image" src="{{ article.photo.url }}" alt="{{ article.type }}"></p>
+                    <h5> Owner {{ element.owner_name}}
                     <h6 class="text-muted" > Added {{ element.created_at|timesince }} Ago</h6>
                     
                   </li>
                 </div>
                           </a>
-  
+  	</div>
+  </div>
             {% endfor %}
   	</ul>
 {% endblock body %}
