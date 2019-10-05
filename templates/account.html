@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %} Account {% endblock title %}
+
+{% block body %}
+
+<h1> Welcome {{ request.user.username}}
+
+	<a class = "btn button blue lighten-1 text-dark" href="{% url 'password_change'  %}"> Change Password</a>
+	
+
+
+<h3>You are a {{ request.user.category }}</h3>
+<h4> Contact number {{ request.user.mob_num }}</h4>
+
+{% if request.user.category == 'Seller' %}
+
+<ul type="none">
+	<li> <a class = "btn button green lighten-1 text-dark" href="{% url 'addarticle'  %}"> Add Article </a></li>
+</li>
+</ul>
+{% endif %}
+
+{% endblock body %}

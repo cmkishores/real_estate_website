@@ -31,8 +31,11 @@
   
   <a class="navbar-link btn yellow darken-2" href="{% url 'signup' %}">SignUp!</a>
 
+	
+
   {% else %}
-  <a class="navbar-link btn white" href="{% url 'logout' %}"> Logout</a>
+  <a class="btn white " href="{% url 'profile' %}">Account</a>
+ <a class="navbar-link btn white" href="{% url 'logout' %}"> Logout</a>
 
   {% endif %}
 
