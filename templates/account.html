@@ -4,7 +4,7 @@
 
 {% block body %}
 
-<h1> Welcome {{ request.user.username}}
+<h1> Welcome {{ request.user.username}} </h1>
 
 	<a class = "btn button white text-dark" href="{% url 'password_change'  %}"> Change Password</a>
 	
@@ -16,7 +16,7 @@
 {% if request.user.category == 'Seller' %}
 
 <ul type="none">
-	<li> <a class = "btn button green lighten-1 text-dark" href="{% url 'addarticle'  %}"> Add Article </a></li>
+	<li> <a class = "btn button red lighten-3 text-dark" href="{% url 'addarticle'  %}"> Add Article </a></li>
 </li>
 </ul>
 {% endif %}
