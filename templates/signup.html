@@ -10,8 +10,7 @@
 
 <h1 class="font-weight-bold"> Sign Up </h1>
 
-<form action=""  method="post">
-	{% csrf_token %}
+<form action=""  method="post">{% csrf_token %}
 	{{ form|crispy }} 
 	<input class="btn white" type="submit" name="Sign Up" value="Sign Up">
 </form>

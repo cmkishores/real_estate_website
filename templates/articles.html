@@ -16,10 +16,16 @@
 
 
   <img src="{{ article.photo.url }}" alt="{{ article.type }}">
+{% if request.user.username == article.owner.username %}
+
+<p><a class = "card-link btn text-dark text-danger " href="{% url 'editarticle'  article.id %}">Edit Property </a></p>
+{% endif %}
+
+
 {% if request.user.is_authenticated %}
 
-<p><a class = "card-link btn text-dark text-danger " href="{% url 'editarticle'  article.id %}">Edit Article </a></p>
-{% endif %}
+
+<h5 > Contact {{ article.owner.username }}: {{ article.owner.mob_num }} </a>
 
 <div class="mt-5">
 	<h2>
@@ -34,9 +40,6 @@
 
 {% endfor %}
 
-{% if request.user.is_authenticated %}
-
-<h5 class="card m-5"> Contact seller :- {{ article.owner }} </a>
 
 {% endif %}
 {% endblock body %}
