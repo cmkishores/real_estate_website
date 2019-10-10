@@ -21,7 +21,7 @@
 <body>
 
 <!--Navbar-->
-<nav class="navbar navbar-dark yellow darken-4 mb-4">
+<nav class="navbar navbar-dark red lighten-2 mb-4">
 
   <!-- Navbar brand -->
   <a class="navbar-brand " href="{% url 'home' %}">realEst</a>
@@ -29,7 +29,7 @@
   {% if not request.user.is_authenticated %}
   <a class="navbar-link btn orange lighten-2 text-dark" href="{% url 'login'%}">LogIn</a>
   
-  <a class="navbar-link btn yellow darken-2" href="{% url 'signup' %}">SignUp!</a>
+  <a class="navbar-link btn red darken-2" href="{% url 'signup' %}">SignUp!</a>
 
 	
 
@@ -45,7 +45,13 @@
 	{% block body %}  {% endblock body %}
 </div>
 
+<footer class="page-footer font-small red lighten-2" >
 
+  <div class="footer-copyright text-center py-3">© 2019 Copyright:
+    <a href="https://mdbootstrap.com/education/bootstrap/">contact - cmkishores@gmail.com for queries</a>
+  </div>
+
+</footer>
 
 
 
