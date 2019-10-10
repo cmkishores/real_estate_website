@@ -11,8 +11,9 @@ class ArticleTest(TestCase):
 
 		self.post = Article.objects.create(category="Flats",condition="Used",owner_name="test",owner_address="test address",description="test description",location="test location",photo="")
 
-	#def test_article_content(self):
+	def test_article_content(self):
 		
+		pass
 		#article_object = Article.objects.get(pk=1)
 		#expected_object_cat = f'{article_object.category}'
 		#expected_object_cond = f'{article_object.condition}'

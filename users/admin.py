@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import CustomUser # Imports custom user created in users.models
+from .models import CustomUser 
+# Imports custom user created in users.models
  
 from .forms import CustomUserCreationForm, CustomUserChangeForm # Imports the two custom forms created in users.forms
 from django.contrib.auth.admin import UserAdmin
