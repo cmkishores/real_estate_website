@@ -10,6 +10,8 @@
 <!-- Material Design Bootstrap -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.10/css/mdb.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 
 <style type="text/css"> 
 html {
@@ -42,15 +44,19 @@ footer {
 
 <!--Navbar-->
 <nav class="navbar navbar-dark red lighten-2 mb-4">
-<div class="d-flex ">
-  <!-- Navbar brand -->
-  <div class="p-2 mr-auto"><a class="navbar-brand " href="{% url 'home' %}">realEst</a></div>
 
+  <!-- Navbar brand -->
+  <div class="p-2"><a class="navbar-brand" href="{% url 'home' %}">realEst</a></div>
    
+  <a href="{% url 'home' %}" class="material-icons text-white">
+home
+</i></a>
+
+   <div class="d-flex align-items-end">
   {% if not request.user.is_authenticated %}
-  <div class="p-2"><a class="navbar-link btn orange lighten-2 text-dark" href="{% url 'login'%}">LogIn</a></div>
+  <div class="p-2 "><a class="navbar-link btn white " href="{% url 'login'%}">LogIn</a></div>
   
-  <div class="p-2"><a class="navbar-link btn red darken-2" href="{% url 'signup' %}">SignUp!</a></div>
+  <div class="p-2"><a class="navbar-link btn white " href="{% url 'signup' %}">SignUp!</a></div>
 
 	
 
