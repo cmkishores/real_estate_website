@@ -37,7 +37,7 @@ class Article(models.Model):
 	created_at = models.DateTimeField(auto_now_add=True, editable=False, null=False, blank=False)
 
 	def __str__(self):
-		return self.owner_name
+		return self.description
 
 
 	def get_absolute_url(self):
@@ -47,7 +47,14 @@ class Article(models.Model):
 
 #Comment model for posts 
 class Comment(models.Model):
-    post = models.ForeignKey('articles.Article', on_delete=models.CASCADE, related_name='comments')
-    author = models.CharField(max_length=200)
-    text = models.TextField()
-    created_date = models.DateTimeField(auto_now_add=True, editable=False, null=False, blank=False)
+	post = models.ForeignKey('articles.Article', on_delete=models.CASCADE, related_name='comments')
+	author = models.CharField(max_length=200)
+	text = models.TextField()
+	created_date = models.DateTimeField(auto_now_add=True, editable=False, null=False, blank=False)
+
+
+	def __str__(self):
+		return self.text
+
+	def get_absolute_url(self):
+		return reverse('article',args=[str(self.post.id)])
