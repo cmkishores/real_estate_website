@@ -49,8 +49,9 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     #providers list
-   # 'allauth.socialaccount.providers.facebook',
-   # 'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.github',
+
+
 
     #user-created apps
     'users.apps.UsersConfig',
@@ -59,6 +60,19 @@ INSTALLED_APPS = [
 
 #for allauth
 SITE_ID = 1
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_USERNAME_REQUIRED = False
+
+SOCIALACCOUNT_PROVIDERS = {
+    'github': {
+        'SCOPE': [
+            'user',
+            'repo',
+            'read:org',
+        ],
+    }
+}
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -157,3 +171,5 @@ LOGOUT_REDIRECT_URL = 'home'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+ACCOUNT_LOGOUT_ON_GET = True
+SOCIALACCOUNT_FORMS = {'signup': 'users.forms.CustomUserCreationForm'}
