@@ -8,16 +8,24 @@
 <h1>Welcome to realEst</h1>
 
 
+{% if request.user.category == 'Seller' %}
+
+<ul type="none">
+  <li> <a class = "btn button red lighten-3 text-dark" href="{% url 'addarticle'  %}"> Add Article </a></li>
+</li>
+</ul>
+{% endif %}
+
 <ul class="list-inline" > 
 
 	      {% for element in articlelist reversed %}
             <div class="card md-2 mt-2">
-            	<div clas="card-body">
+            	<div clas="card-body" style="">
             <a class = "card-link text-danger text-danger " href="{% url 'article' element.id %}">
                
                 <div class="container m-3">
                   <li class="list-inline-item"> 
-                  	 <img src="{{ element.photo.url }}" alt="{{ element.type }}">
+                  	 <img src="{{ element.photo.url }}" alt="{{ element.type }}" style="height:200px; width:200px;">
                     <h4 > Type of property: {{ element.category }} ( {{ element.location }} ) </h4>
                     
                     <h5 class="text-dark"><small class="text-muted"> Owner : </small> {{ element.owner_name}}
@@ -30,5 +38,7 @@
   	</div>
   </div>
             {% endfor %}
+
+
   	</ul>
 {% endblock body %}

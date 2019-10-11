@@ -13,12 +13,6 @@
 <h3>You are a {{ request.user.category }}</h3>
 <h4> Contact number {{ request.user.mob_num }}</h4>
 
-{% if request.user.category == 'Seller' %}
 
-<ul type="none">
-	<li> <a class = "btn button red lighten-3 text-dark" href="{% url 'addarticle'  %}"> Add Article </a></li>
-</li>
-</ul>
-{% endif %}
 
 {% endblock body %}

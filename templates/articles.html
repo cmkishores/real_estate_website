@@ -4,20 +4,21 @@
 
 
 {% block body %}
-
-<h1> Property type : {{ article.category }} </h1>
-
-<h2>Owner of Property : {{ article.owner_name }}</h2>
-
-
-<p> Short Description : {{ article.description }} </p>
-<h3>Price: {{ article.price }}$</h3>
-
-
-
-
-
   <img src="{{ article.photo.url }}" alt="{{ article.type }}">
+
+<h4><small class="text-muted"> Property type :</small> {{ article.category }} </h1>
+
+<h5><small class="text-muted"> Owner of Property :</small>{{ article.owner_name }}</h2>
+
+
+<h5> <small class="text-muted"> Short Description :</small> <br> {{ article.description }} </h3>
+<h6>Price: {{ article.price }}$</h3>
+
+
+
+
+
+
 {% if request.user.username == article.owner.username %}
 
 <p><a class = "card-link btn text-dark text-danger " href="{% url 'editarticle'  article.id %}">Edit Property </a></p>
@@ -32,12 +33,16 @@
 <div class="mt-5">
 	<h2>
 	Comments </h2>
+	<a class="btn btn white" href="{% url 'add_comment_to_post' article.id %}">Add comment</a>
 {% for comment in article.comments.all %}
-    <div class="comment">
-        <div class="date">{{ comment.created_date }}</div>
+	<div class="d-flex flex-column">
+    <div class="comment card mt-3 ml-4" style="width:500px;">
+       <div class="card-body"> <div class="date">{{ comment.created_date }}</div>
         <strong>{{ comment.author }}</strong>
         <p>{{ comment.text|linebreaks }}</p>
     </div>
+</div>
+</div>
 </div>
 
 {% endfor %}
