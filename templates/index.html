@@ -20,7 +20,8 @@
                   	 <img src="{{ element.photo.url }}" alt="{{ element.type }}">
                     <h4 > Type of property: {{ element.category }} ( {{ element.location }} ) </h4>
                     
-                    <h5> Owner {{ element.owner_name}}
+                    <h5 class="text-dark"><small class="text-muted"> Owner : </small> {{ element.owner_name}}
+                    <h3>Price: {{ element.price }}$</h3>
                     <h6 class="text-muted" > Added {{ element.created_at|timesince }} Ago</h6>
                     
                   </li>
