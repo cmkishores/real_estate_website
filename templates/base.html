@@ -42,23 +42,23 @@ footer {
 
 <!--Navbar-->
 <nav class="navbar navbar-dark red lighten-2 mb-4">
-
+<div class="d-flex ">
   <!-- Navbar brand -->
-  <a class="navbar-brand " href="{% url 'home' %}">realEst</a>
+  <div class="p-2 mr-auto"><a class="navbar-brand " href="{% url 'home' %}">realEst</a></div>
 
+   
   {% if not request.user.is_authenticated %}
-  <a class="navbar-link btn orange lighten-2 text-dark" href="{% url 'login'%}">LogIn</a>
+  <div class="p-2"><a class="navbar-link btn orange lighten-2 text-dark" href="{% url 'login'%}">LogIn</a></div>
   
-  <a class="navbar-link btn red darken-2" href="{% url 'signup' %}">SignUp!</a>
+  <div class="p-2"><a class="navbar-link btn red darken-2" href="{% url 'signup' %}">SignUp!</a></div>
 
 	
 
   {% else %}
-  <a class="btn white " href="{% url 'profile' %}">Account</a>
- <a class="navbar-link btn white" href="{% url 'logout' %}"> Logout</a>
+ <a class="navvar-link btn white align-right" href="{% url 'profile' %}">Account</a>
+ <a class="navbar-link btn white align-right" href="{% url 'logout' %}"> Logout</a>
 
   {% endif %}
-
   
 </nav>
 <div class="container">
