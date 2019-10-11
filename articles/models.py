@@ -1,6 +1,7 @@
 from django.db import models
 from django.urls import reverse
 from django.contrib.auth import get_user_model
+from datetime import datetime
 
 class Article(models.Model):
 
@@ -32,6 +33,8 @@ class Article(models.Model):
 	location = models.TextField()
 	photo = models.ImageField(upload_to='images/',blank=True)
 	owner = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
+	price = models.PositiveIntegerField(default=10000)
+	created_at = models.DateTimeField(auto_now_add=True, editable=False, null=False, blank=False)
 
 	def __str__(self):
 		return self.owner_name
