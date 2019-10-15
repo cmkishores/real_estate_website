@@ -18,11 +18,13 @@ from django.conf import settings
 from django.urls import path,include
 from django.conf.urls.static import static
 from django.views.generic import TemplateView
+from django.contrib.auth import urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('users/',include('users.urls')),
     path('', include('articles.urls')),
-    path('accounts/', include('allauth.urls')),
+    path('users/',include('django.contrib.auth.urls')),
+    path('account/', include('allauth.urls')),
     path('profile',TemplateView.as_view(template_name='account.html'),name='profile'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

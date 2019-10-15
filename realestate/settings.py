@@ -62,7 +62,6 @@ INSTALLED_APPS = [
 SITE_ID = 1
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_USERNAME_REQUIRED = False
-
 SOCIALACCOUNT_PROVIDERS = {
     'github': {
         'SCOPE': [
@@ -172,4 +171,3 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 ACCOUNT_LOGOUT_ON_GET = True
-SOCIALACCOUNT_FORMS = {'signup': 'users.forms.CustomUserCreationForm'}

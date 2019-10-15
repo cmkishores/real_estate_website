@@ -6,7 +6,8 @@
 
 {% block body %} 
 
-<h1>Welcome to realEst</h1>
+<h1>Welcome to realEst, {{ user.username }}</h1>
+
 
 
 {% if request.user.category == 'Seller' %}

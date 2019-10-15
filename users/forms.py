@@ -5,7 +5,7 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 
 
-class CustomUserCreationForm(SignupForm):
+class CustomUserCreationForm(UserCreationForm):
 
 	#This class creates a custom user creation form inheriting the built-in UserCreationForm and builts on top of that. 
 

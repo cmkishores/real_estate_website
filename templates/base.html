@@ -55,15 +55,15 @@ home
 
    <div class="d-flex align-items-end">
   {% if not request.user.is_authenticated %}
-  <div class="p-2 "><a class="navbar-link btn white " href="{% url 'account_login'%}">LogIn</a></div>
+  <div class="p-2 "><a class="navbar-link btn white " href="{% url 'login'%}">LogIn</a></div>
   
-  <div class="p-2"><a class="navbar-link btn white " href="{% url 'account_signup' %}">SignUp!</a></div>
+  <div class="p-2"><a class="navbar-link btn white " href="{% url 'signup' %}">SignUp!</a></div>
 
 	
 
   {% else %}
  <a class="navvar-link btn white align-right" href="{% url 'profile' %}">Account</a>
- <a class="navbar-link btn white align-right" href="{% url 'account_logout' %}"> Logout</a>
+ <a class="navbar-link btn white align-right" href="{% url 'logout' %}"> Logout</a>
 
   {% endif %}
   
