@@ -5,7 +5,7 @@
 {% block body %}
   <img src="{{ article.photo.url }}" alt="{{ article.type }}">
 
-<h4><small class="text-muted"> Property type :</small> {{ article.category }} </h1>
+<h4 class=" mt-4"><small class="text-muted"> Property type :</small> {{ article.category }} </h1>
 
 <h5><small class="text-muted"> Owner of Property :</small>{{ article.owner_name }}</h2>
 
@@ -20,7 +20,11 @@
 
 {% if request.user.username == article.owner.username %}
 
-<p><a class = "card-link btn text-dark text-danger " href="{% url 'editarticle'  article.id %}">Edit Property </a></p>
+<p><a class = "card-link btn red lighten-4 " href="{% url 'editarticle'  article.id %}">Edit Property </a>
+<a class = "card-link btn text-danger " href="{% url 'deletearticle'  article.id %}">Delete Property </a>
+</p>
+
+
 {% endif %}
 
 
