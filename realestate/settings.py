@@ -60,8 +60,6 @@ INSTALLED_APPS = [
 
 #for allauth
 SITE_ID = 1
-ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_USERNAME_REQUIRED = False
 SOCIALACCOUNT_PROVIDERS = {
     'github': {
         'SCOPE': [
@@ -106,8 +104,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                 # specific for allauth
-                'django.template.context_processors.request',
+                
             ],
         },
     },

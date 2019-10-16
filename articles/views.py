@@ -17,8 +17,7 @@ class ArticlesListView(ListView):
 	model = Article
 	template_name = 'index.html'
 	context_object_name = 'articlelist'
-	login_url = 'login'
-
+	
 
 class ArticleDetailView(DetailView):
 
