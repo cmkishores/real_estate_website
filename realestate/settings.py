@@ -25,7 +25,7 @@ SECRET_KEY = '&p5+!r1ab-r@8jy&=ad@o0jp7j!qr+^s_wjkon!td+%2igdfi0'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -41,6 +41,7 @@ INSTALLED_APPS = [
 
     #3rd party apps
     'crispy_forms',
+
 
 
     

@@ -11,6 +11,8 @@ django = "*"
 django-allauth = "*"
 django-crispy-forms = "*"
 pillow = "*"
+heroku = "*"
+gunicorn = "==19.9.0"
 
 [requires]
 python_version = "3.6"
