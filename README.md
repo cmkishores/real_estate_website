@@ -16,6 +16,6 @@ A django-HTML-CSS webpage built to mimic a Real Estate e-Commerce website with s
 
 #### Website Link
 
-*See the website at : [RealEst](https://secure-gorge-88764.herokuapp.com/)
+* See the website at : [RealEst](https://secure-gorge-88764.herokuapp.com/)
 
 
